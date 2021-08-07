@@ -1,44 +1,46 @@
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-            <title>Happy Community - Signup</title>
-            <link rel="shortcut icon" href="./figs/smily_face.png"/>
-            <link rel="stylesheet" href="style.css">
-        </head>
-        <body> 
-            <header>
-                <h1>Happy Community</h1>
-            </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Happy Community - Signup</title>
+    <link rel="shortcut icon" href="./figs/smiley_face.png"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Happy Community</h1>
+</header>
 
-            <section class="container">
-              <form id="my-form">
-                <h1>Sign up</h1>
-                
-                <div class="msg"></div>
-                <div>
-                    <label for="username">Username</label>
-                    <input type="text" id="username">
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password">
-                </div>
-                <div>
-                    <label for="confirm">Confirm password</label>
-                    <input type="password" name="confirm" id="confirm">
-                </div>
-                
-                <input class="btn" type="submit" id="signup-submit" value="Sign up">
-                <input class="btn" type="submit" id="go-to-index" value="Go back">
-              </form>
+<section class="container">
+    <form id="my-form">
+        <h1>Sign up</h1>
 
-              <ul id="users"></ul>
-            </section>
-            
+        <div class="msg"></div>
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div>
+            <label for="confirm">Confirm password</label>
+            <input type="password" name="confirm" id="confirm">
+        </div>
 
-            <script src="signup.js"></script>
-        </body>
-    </html>
+        <input class="btn" type="submit" id="signup-submit" value="Sign up" onclick="addUser()">
+        <!--                <input class="btn" type="submit" id="go-to-index" value="Go back">-->
+        <input class = "btn" type="button" value="Go back" onclick="history.back(-1)" />
+
+    </form>
+
+    <ul id="users"></ul>
+</section>
+
+
+<script src="signup.js"></script>
+</body>
+</html>

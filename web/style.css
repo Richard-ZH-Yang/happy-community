@@ -12,11 +12,20 @@ body {
     background-size: cover;
 }
 
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 5px;
+    background: #f4f4f4;
+    margin: 5px 0;
+}
+
 header {
     background: #f4f4f4;
     padding: 1rem;
     text-align: center;
-    opacity: 1;
 }
 
 .container {
@@ -29,8 +38,8 @@ header {
 #my-form {
     padding: 2rem;
     background: #f4f4f4;
-    opacity: 0.75;
 }
+
 
 #my-form label {
     display: block;
@@ -44,12 +53,12 @@ header {
     border: 1px solid #ccc;
 }
 
-#my-form input[type='password'] {
+#my-form input[type='largetext'] {
     width: 100%;
-    padding: 8px;
+    padding: 100px;
     margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    border-radius: 10px;
+    border: 2px solid #ccc;
 }
 
 .btn {
@@ -58,15 +67,19 @@ header {
     padding: 10px 15px;
     border: 0;
     background: #333;
-    opacity: 1;
     color: #fff;
     border-radius: 5px;
     margin: 5px 0;
     text-align: center;
+    text-decoration: none;
 }
 
-.btn:hover {
+
+
+.btn:hover, btn:visited, btn:link, btn:active {
     background: #444;
+    text-decoration: none;
+
 }
 
 .bg-dark {
@@ -79,4 +92,38 @@ header {
     color: #fff;
     padding: 5px;
     margin: 5px;
+}
+
+
+
+nav {
+    width: 2000px;
+    height: 40px;
+    border: solid 3px black;
+    background: #434a66;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav ul li {
+    float: left;
+    width: 580px;
+    height: 40px;
+    line-height: 30px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    height: 30px;
+    width: 580px;
+    display: block;
+    color: #74a7ef;
+}
+
+nav a:hover{
+    color: white;
+    background: #575f73;
 }

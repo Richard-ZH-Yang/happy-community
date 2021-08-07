@@ -24,11 +24,14 @@ const msg = document.querySelector('.msg');
 loginButton.addEventListener('click', onSubmit);
 function onSubmit(e) {
     e.preventDefault();
-    
+
     if (username.value === '' || password.value === '') {
         msg.classList.add('error');
         msg.innerHTML = 'Please enter all fields';
     }
-    
+
 }
+
+
+
 
