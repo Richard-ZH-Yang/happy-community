@@ -44,8 +44,8 @@ function getUserInJSON() {
     let xhttp = new XMLHttpRequest();
     xhttp.open("GET", `http://localhost:8080/login/getUrl`, true);
     xhttp.setRequestHeader("Content-Type", "application/json");
-    return xhttp.send(JSON.stringify(newUser));
-
+    xhttp.send();
+    return JSON.parse(xhttp.responseText);
 }
 
 

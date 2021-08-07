@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Happy Community - Signup</title>
-  <link rel="shortcut icon" href="./figs/smiley_face.png"/>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Happy Community - Signup</title>
+    <link rel="shortcut icon" href="./figs/smiley_face.png"/>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <h1>Happy Community</h1>
+    <h1>Happy Community</h1>
 </header>
 
 <nav>
-  <ul>
-    <li id = "history"><a href="history.html">History</a></li>
-    <li id = "community"><a href="community.html">Community</a></li>
-    <li id = "logout"><a href="index.html">Log out</a></li>
+    <ul>
+        <li id="history"><a href="history.html">History</a></li>
+        <li id="community"><a href="community.html">Community</a></li>
+        <li id="logout"><a href="index.html">Log out</a></li>
 
-  </ul>
+    </ul>
 
 
 </nav>
 
 <section class="container">
-  <form id="my-form">
+    <form id="my-form">
 
-    <div class="msg"></div>
-    <div>
-      <label for="username">Please input how you feel today with a paragraph:</label>
-      <input type="largetext" id="username">
-    </div>
+        <div class="msg"></div>
+        <div>
+            <label for="username">Please input how you feel today with a paragraph:</label>
+            <!--      <input type="largetext" id="username">-->
+            <textarea name="message" rows="20" cols=45"></textarea>
+
+        </div>
+
+        <div>
+            <label for="username">score</label>
+
+        </div>
 
 
-    <input class="btn" type="submit" id="diary-getScore" value="Get score">
-    <input class="btn" type="submit" id="diary-submit" value="Submit">
+        <input class="btn" type="submit" id="diary-getScore" value="Get score">
+        <input class="btn" type="submit" id="diary-submit" value="Submit">
 
 
+    </form>
 
-  </form>
-
-  <ul id="users"></ul>
+    <ul id="users"></ul>
 </section>
 
 
