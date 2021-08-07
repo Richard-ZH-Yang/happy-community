@@ -26,37 +26,18 @@ const msg = document.querySelector('.msg');
 getScoreButton.addEventListener('click', onGetScore);
 function onGetScore(e) {
     e.preventDefault();
-    const score = getScore(content.value);
+    diaryContent = content.value.replace(' ', '_');
+    const score = getScore(diaryContent);
     msg.classList.add('score');
-    msg.innerHTML = `Score: ${score}`;
 
 }
 
 function getScore(content) {
+    // let xhttp = new XMLHttpRequest();
+    // xhttp.open("GET", `http://localhost:8080/login/add?diary=${content}`, true);
+    // xhttp.setRequestHeader("Content-Type", "application/json");
+    // xhttp.send(JSON.stringify({"content": content}));
     console.log(content);
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", `http://localhost:8080/login/add?username=${username}&password=${password}`, true);
-    xhttp.setRequestHeader("Content-Type", "application/json");
-    xhttp.send(JSON.stringify(newUser));
-}
-
-function addUser() {
-
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-    var newJSON  = {'username': username, 'password': password};
-    addUserInJSON(newJSON);
-    return username;
-}
-
-function addUserInJSON(newUser) {
-    var username = newUser['username'];
-    var password = newUser['password'];
-
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", `http://localhost:8080/login/add?username=${username}&password=${password}`, true);
-    xhttp.setRequestHeader("Content-Type", "application/json");
-    xhttp.send(JSON.stringify(newUser));
-    document.getElementById("my-form").innerHTML = `<h1>New User Added!</h1>`;
-
+    score = 10;  // TODO: get score
+    msg.innerHTML = `Score: ${score}`;
 }
