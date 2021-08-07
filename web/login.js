@@ -26,7 +26,11 @@ function onSubmit(e) {
     if (username.value === '' || password.value === '') {
         msg.classList.add('error');
         msg.innerHTML = 'Please enter all fields';
+    } else {
+        location.href = 'diary.html';
     }
+
+
     
 }
 

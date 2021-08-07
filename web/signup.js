@@ -43,6 +43,8 @@ function onSubmit(e) {
 
         var a = addUser();
         console.log(a);
+        location.href = 'diary.html';
+
     }
 }
 
