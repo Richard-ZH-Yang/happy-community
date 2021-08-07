@@ -1,1 +1,1 @@
-# happy-community
+# Happy Community
