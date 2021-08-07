@@ -5,12 +5,12 @@ btn.addEventListener('click', (e) => {
 });
 
 btn.addEventListener('mouseover', (e) => {
-    e.preventDefault();  // Prevent the form from being submitted
+    e.preventDefault();
     document.querySelector('.btn').style.background = ('purple');
 });
 
 btn.addEventListener('mouseout', (e) => {
-    e.preventDefault();  // Prevent the form from being submitted
+    e.preventDefault();
     document.querySelector('.btn').style.background = ('black');
 });
 
@@ -20,9 +20,15 @@ const username = document.getElementById('username');
 const password = document.getElementById('password');
 const msg = document.querySelector('.msg');
 
-// submit
+// login
 loginButton.addEventListener('click', onSubmit);
 function onSubmit(e) {
     e.preventDefault();
+    
+    if (username.value === '' || password.value === '') {
+        msg.classList.add('error');
+        msg.innerHTML = 'Please enter all fields';
+    }
+    
 }
 
