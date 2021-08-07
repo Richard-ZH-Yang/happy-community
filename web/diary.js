@@ -26,20 +26,26 @@ const msg = document.querySelector('.msg');
 getScoreButton.addEventListener('click', onGetScore);
 function onGetScore(e) {
     e.preventDefault();
-    const score = getScore(content);
-    msg.classList.add('score');
-
+    getScore(content);
 }
 
 function getScore(content) {
     diaryContent = content.value.replace(' ', '_');
     
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", `http://localhost:8080/login/add?diary=${diaryContent}`, true);
-    xhttp.setRequestHeader("Content-Type", "application/json");
-    xhttp.send(JSON.stringify({"content": content}));
-    xhttp.onload() = function() {
-        score = this.responseText;
-        msg.innerHTML = `Score: ${score}`;
+    try {
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("GET", `http://localhost:8080/login/score?diary=${diaryContent}`, true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.send(JSON.stringify({"content": content}));
+        xhttp.onload() = function() {
+            score = this.responseText;
+            msg.classList.add('score');
+            msg.innerHTML = `Score: ${score}`;
+        }
+    } catch (e) {
+        console.log(e);
+    } finally {
+        msg.classList.add('error');
+        msg.innerHTML = 'Connection error. Please try again.';
     }
 }
