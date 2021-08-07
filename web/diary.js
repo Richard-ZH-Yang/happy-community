@@ -37,7 +37,7 @@ function getScore(content) {
         xhttp.open("GET", `http://localhost:8080/login/diary/score?content=${diaryContent}`, true);
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(JSON.stringify({"content": content}));
-        xhttp.onload() = function() {
+        xhttp.onload = function() {
             score = this.responseText;
             console.log(`score = ${score}`);
             msg.classList.add('score');
