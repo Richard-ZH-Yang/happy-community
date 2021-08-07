@@ -26,31 +26,16 @@
 
 <section class="container">
     <form id="my-form">
-
         <div class="msg"></div>
-        <div>
-            <label for="username">Please input how you feel today with a paragraph:</label>
-            <!--      <input type="largetext" id="username">-->
-            <textarea name="message" rows="20" cols=45"></textarea>
-
-        </div>
-
-        <div>
-            <label for="username">score</label>
-
-        </div>
-
-
+        <textarea name="message" placeholder="Please input how you feel today with a paragraph" rows="30" cols=45" id="content"></textarea>
+        <label for="score"></label>
         <input class="btn" type="submit" id="diary-getScore" value="Get score">
-        <input class="btn" type="submit" id="diary-submit" value="Submit">
-
-
+        <input class="btn" type="submit" id="diary-getScore" value="Submit your diary">
+        <div class="msg"></div>
     </form>
-
-    <ul id="users"></ul>
 </section>
 
 
-<script src="signup.js"></script>
+<script src="diary.js"></script>
 </body>
 </html>

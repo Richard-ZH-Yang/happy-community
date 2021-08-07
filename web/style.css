@@ -12,6 +12,22 @@ body {
     background-size: cover;
 }
 
+/* textarea {
+    font-size: .8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+} */
+
+textarea {
+    border: 3px solid #cccccc;
+    padding: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+}
+
 ul {
     list-style: none;
 }
@@ -115,6 +131,13 @@ header {
 
 .error {
     background: orangered;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+}
+
+.score {
+    background: lightskyblue;
     color: #fff;
     padding: 5px;
     margin: 5px;

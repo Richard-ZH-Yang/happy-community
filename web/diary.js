@@ -16,25 +16,29 @@ btn.addEventListener('mouseout', (e) => {
     document.querySelector('.btn').style.background = ('black');
 });
 
-const username = document.getElementById('username');
-const password = document.getElementById('password');
-const passwordConfirm = document.getElementById('confirm');
-const msg = document.querySelector('.msg');
 
 const getScoreButton = document.getElementById("diary-getScore");
 const submitButton = document.getElementById("diary-submit");
+const content = document.getElementById("content");
+const msg = document.querySelector('.msg');
 
-
-
-
-// submit
+// request score
 getScoreButton.addEventListener('click', onGetScore);
 function onGetScore(e) {
     e.preventDefault();
-
+    const score = getScore(content.value);
+    msg.classList.add('score');
+    msg.innerHTML = `Score: ${score}`;
 
 }
 
+function getScore(content) {
+    console.log(content);
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", `http://localhost:8080/login/add?username=${username}&password=${password}`, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.send(JSON.stringify(newUser));
+}
 
 function addUser() {
 
