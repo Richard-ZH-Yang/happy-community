@@ -39,6 +39,7 @@ function getScore(content) {
         xhttp.send(JSON.stringify({"content": content}));
         xhttp.onload() = function() {
             score = this.responseText;
+            console.log(`score = ${score}`);
             msg.classList.add('score');
             msg.innerHTML = `Score: ${score}`;
         }
