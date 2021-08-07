@@ -25,9 +25,6 @@ const msg = document.querySelector('.msg');
 signupButton.addEventListener('click', onSubmit);
 function onSubmit(e) {
     e.preventDefault();
-    console.log(username);
-    console.log(password);
-    console.log(passwordConfirm);
 
     if (username.value === '' || password.value === '' || passwordConfirm.value === '') {
         msg.classList.add('error');
@@ -38,9 +35,10 @@ function onSubmit(e) {
     // } else if (checkDuplicity(username.value)) {
     //     msg.classList.add('error');
     //     msg.innerHTML = 'Username already exists!';
-    // } 
     } else {
-        const userData = new User(username.value, password.value);
+        const newUser = new NewUser(username.value, password.value);
+        newUser.addJournal('Hello');
+        console.log(newUser.toJson());
     }
 }
 
@@ -54,24 +52,27 @@ function onSubmit(e) {
 // 
 // }
 
-class User {
+class NewUser {
     constructor(username, password) {
         this.username = username;
         this.password = password;  // TODO: encrypt this
     }
 
-    write(essay) {
-        this.diaries.push(essay);
+    addJournal(journal) {
+        this.journals = [journal];
+    }
+    
+    toJson() {
+        var personJson = {
+            "username": this.username,
+            "password": this.password
+        }
+        
+        if (this.journals != null) {
+            personJson["journals"] = this.journals;
+        }
+        
+        return JSON.stringify(personJson);
     }
 }
 
-class Essay {
-    constructor(text, date) {
-        this.text = text;
-        this.date = date;
-    }
-    
-    addScore(score) {
-        this.score = score;
-    }
-}
