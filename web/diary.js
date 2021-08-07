@@ -26,18 +26,20 @@ const msg = document.querySelector('.msg');
 getScoreButton.addEventListener('click', onGetScore);
 function onGetScore(e) {
     e.preventDefault();
-    diaryContent = content.value.replace(' ', '_');
-    const score = getScore(diaryContent);
+    const score = getScore(content);
     msg.classList.add('score');
 
 }
 
 function getScore(content) {
-    // let xhttp = new XMLHttpRequest();
-    // xhttp.open("GET", `http://localhost:8080/login/add?diary=${content}`, true);
-    // xhttp.setRequestHeader("Content-Type", "application/json");
-    // xhttp.send(JSON.stringify({"content": content}));
-    console.log(content);
-    score = 10;  // TODO: get score
-    msg.innerHTML = `Score: ${score}`;
+    diaryContent = content.value.replace(' ', '_');
+    
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", `http://localhost:8080/login/add?diary=${diaryContent}`, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.send(JSON.stringify({"content": content}));
+    xhttp.onload() = function() {
+        score = this.responseText;
+        msg.innerHTML = `Score: ${score}`;
+    }
 }
