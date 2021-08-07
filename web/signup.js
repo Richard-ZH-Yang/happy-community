@@ -14,23 +14,27 @@ btn.addEventListener('mouseout', (e) => {
     document.querySelector('.btn').style.background = ('black');
 });
 
-const myForm = document.querySelector('#my-form');
+const signupButton = document.getElementById("signup-submit");
+const goBackButton = document.getElementById("go-to-index");
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 const passwordConfirm = document.getElementById('confirm');
 const msg = document.querySelector('.msg');
 
 // submit
-myForm.addEventListener('submit', onSubmit);
+signupButton.addEventListener('click', onSubmit);
 function onSubmit(e) {
     e.preventDefault();
+    console.log(username);
+    console.log(password);
+    console.log(passwordConfirm);
 
     if (username.value === '' || password.value === '' || passwordConfirm.value === '') {
         msg.classList.add('error');
         msg.innerHTML = 'Please enter all fields';
     } else if (password.value != passwordConfirm.value) {
         msg.classList.add('error');
-        msg.innerHTML = 'Passwords do not match!';
+        msg.innerHTML = 'Passwords do not match';
     // } else if (checkDuplicity(username.value)) {
     //     msg.classList.add('error');
     //     msg.innerHTML = 'Username already exists!';
@@ -44,11 +48,11 @@ function onSubmit(e) {
 //     return false;
 // 
 // }
-
-document.getElementById('get-back').addEventListener('click', goBack);
-function goBack() {
-    
-}
+// 
+// document.getElementById('get-back').addEventListener('click', goBack);
+// function goBack() {
+// 
+// }
 
 class User {
     constructor(username, password) {
