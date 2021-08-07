@@ -31,56 +31,43 @@ function onSubmit(e) {
     } else if (password.value != passwordConfirm.value) {
         msg.classList.add('error');
         msg.innerHTML = 'Passwords do not match!';
-    } else if (checkDuplicity(username.value)) {
-        msg.classList.add('error');
-        msg.innerHTML = 'Username already exists!';
+    // } else if (checkDuplicity(username.value)) {
+    //     msg.classList.add('error');
+    //     msg.innerHTML = 'Username already exists!';
+    // } 
     } else {
-        const userData = document.createTextNode(`{${username.value}: ${password.value}}`);
-        console.log(userData);
+        const userData = new User(username.value, password.value);
     }
 }
 
-function checkDuplicity(username) {
-    return false;
-    
-}
+// function checkDuplicity(username) {
+//     return false;
+// 
+// }
 
-myForm.addEventListener('click', goBack);
+document.getElementById('get-back').addEventListener('click', goBack);
 function goBack() {
     
 }
 
-class Person {
+class User {
     constructor(username, password) {
         this.username = username;
-        this.password = password;
+        this.password = password;  // TODO: encrypt this
     }
-    
-    constructor(username, password, diaries) {
-        this.username = username;
-        this.password = password;
-        this.diaries = diaries;
-    }
-    
+
     write(essay) {
         this.diaries.push(essay);
     }
 }
 
 class Essay {
-    constructor(text, date, score) {
+    constructor(text, date) {
         this.text = text;
         this.date = date;
-        this.score = null;
     }
     
-    constructor(text, date, score) {
-        this.text = text;
-        this.date = date;
-        this.score = score;
-    }
-    
-    changeScore(score) {
+    addScore(score) {
         this.score = score;
     }
 }

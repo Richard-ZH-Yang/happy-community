@@ -23,15 +23,17 @@
         </div>
         <div>
           <label for="password">Password:</label>
-          <input type="text" id="password">
+          <input type="password" placeholder="Password" name="password" value="{{
+           request.form.password }}">
         </div>
         <div>
           <label for="confirm">Confirm password:</label>
-          <input type="text" id="confirm">
+          <input type="password" placeholder="Password" name="password" value="{{
+           request.form.password }}">
         </div>
         
-        <input class="btn" type="submit" value="Submit">
-        <input class="btn" type="submit" value="Go back">
+        <input class="btn" type="submit" id="submit" value="Submit">
+        <input class="btn" type="submit" id="go-back" value="Go back">
       </form>
 
       <ul id="users"></ul>
