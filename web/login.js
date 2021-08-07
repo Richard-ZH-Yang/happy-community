@@ -34,15 +34,17 @@ function onSubmit(e) {
 
 function getUser() {
 
-    var anser = addBookInJSON();
-    document.getElementById("my-form").innerHTML = `<h1> answer </h1>`;
-
+    var answer = getUserInJSON();
+    document.getElementById("my-form").innerHTML = `<h1> User info retrieved </h1>`;
+    return answer;
 }
-function getUserInJSON(newUser) {
+
+
+function getUserInJSON() {
     let xhttp = new XMLHttpRequest();
-    xhttp.open("PUT", `http://localhost:8080/login/getUrl`, true);
+    xhttp.open("GET", `http://localhost:8080/login/getUrl`, true);
     xhttp.setRequestHeader("Content-Type", "application/json");
-    xhttp.send(JSON.stringify(newUser));
+    return xhttp.send(JSON.stringify(newUser));
 
 }
 
