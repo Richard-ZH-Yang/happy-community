@@ -91,5 +91,5 @@ function addUserInJSON(newUser) {
     xhttp.open("PUT", `http://localhost:8080/login/add`, true);
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.send(JSON.stringify(newUser));
-    document.getElementById("main-content").innerHTML = `<h1>New User Added!</h1>`;
+    document.getElementById("my-form").innerHTML = `<h1>New User Added!</h1>`;
 }
