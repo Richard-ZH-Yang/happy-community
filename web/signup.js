@@ -46,42 +46,6 @@ function onSubmit(e) {
     }
 }
 
-// function checkDuplicity(username) {
-//     return false;
-//
-// }
-//
-// document.getElementById('get-back').addEventListener('click', goBack);
-// function goBack() {
-//
-// }
-
-
-
-// class NewUser {
-//     constructor(username, password) {
-//         this.username = username;
-//         this.password = password;  // TODO: encrypt this
-//     }
-//
-//     addJournal(journal) {
-//         this.journals = [journal];
-//     }
-//
-//     toJson() {
-//         var personJson = {
-//             "username": this.username,
-//             "password": this.password
-//         }
-//
-//         if (this.journals != null) {
-//             personJson["journals"] = this.journals;
-//         }
-//
-//         return JSON.stringify(personJson);
-//     }
-// }
-
 function addUser() {
 
     var username = document.getElementById('username').value;
