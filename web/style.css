@@ -12,16 +12,6 @@ body {
     background-size: cover;
 }
 
-ul {
-    list-style: none;
-}
-
-ul li {
-    padding: 5px;
-    background: #f4f4f4;
-    margin: 5px 0;
-}
-
 header {
     background: #f4f4f4;
     padding: 1rem;
