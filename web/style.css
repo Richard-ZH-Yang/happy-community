@@ -143,11 +143,12 @@ nav {
 
 nav ul{
     list-style-type: none;
+    width: 100%;
 }
 
 nav ul li {
     float: left;
-    width: 580px;
+    width: 33%;
     height: 40px;
     line-height: 30px;
     text-align: center;
@@ -156,7 +157,7 @@ nav ul li {
 nav a {
     text-decoration: none;
     height: 30px;
-    width: 580px;
+    width: 100%;
     display: block;
     color: #74a7ef;
 }
