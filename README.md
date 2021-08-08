@@ -1,7 +1,7 @@
 # Happy Community
 
 ## About This Project
-This Project is built to attend the Unihack'21 event.
+This Project is built to attend the [Unihack'21](https://unihack21.devpost.com/?ref_feature=challenge&ref_medium=your-open-hackathons&ref_content=Recently+ended) event.
 
 ## Inspiration
 During the COVID-19 era, mental health problems become increasingly crucial `[Bueno-Notivol et al., 2021]` `[Yamada 2021]`. Our project aimed to provide an online platform for people to write diaries, share stories, and make friends. 
