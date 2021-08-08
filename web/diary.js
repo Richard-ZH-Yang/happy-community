@@ -30,6 +30,7 @@ function onGetScore(e) {
 }
 
 function getScore(content) {
+    
     diaryContent = content.value.replace(' ', '_');
     
     try {
@@ -38,7 +39,7 @@ function getScore(content) {
         xhttp.setRequestHeader("Content-Type", "application/json");
         // xhttp.send(JSON.stringify({"content": content}));
         xhttp.onload = function() {
-            score = this.responseText;
+            score = parseInt(this.responseText['score']);
             console.log(`score = ${score}`);
             msg.classList.add('score');
             msg.innerHTML = `Score: ${score}`;
@@ -48,6 +49,6 @@ function getScore(content) {
         console.log(e);
     } finally {
         msg.classList.add('error');
-        msg.innerHTML = 'Connection error. Please try again.';
+        msg.innerHTML = 'Connecting...';
     }
 }
