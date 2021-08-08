@@ -48,7 +48,7 @@ function getScore(content) {
     } catch (e) {
         console.log(e);
     } finally {
-        msg.classList.add('error');
+        msg.classList.add('score');
         msg.innerHTML = 'Connecting...';
     }
 }
