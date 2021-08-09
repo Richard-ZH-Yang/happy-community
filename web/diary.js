@@ -39,7 +39,7 @@ function getScore(content) {
         xhttp.setRequestHeader("Content-Type", "application/json");
         // xhttp.send(JSON.stringify({"content": content}));
         xhttp.onload = function() {
-            score = this.responseText;
+            const score = this.responseText;
             console.log(`score = ${score}`);
             msg.classList.add('score');
             msg.innerHTML = `Score: ${score}`;
@@ -48,7 +48,7 @@ function getScore(content) {
     } catch (e) {
         console.log(e);
     } finally {
-        msg.classList.add('score');
+        msg.classList.add('message');
         msg.innerHTML = 'Connecting...';
     }
 }
