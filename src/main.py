@@ -38,8 +38,9 @@ def login_login():
         username = request.values.get("username")
         password = request.values.get("password")
 
-        cursor.execute("SELECT username FROM Login WHERE username = \""+str(username)
-                       + "\" AND password = \""+str(password)+"\"")
+        # cursor.execute("SELECT username FROM Login WHERE username = \""+str(username)
+        #                + "\" AND password = \""+str(password)+"\"")
+        cursor.execute(f'SELECT username FROM Login WHERE username = "{str(username)}" AND password = "{str(password)}"')
         data = cursor.fetchone()
         if (data is not None):
             print("result:", data)
@@ -58,7 +59,8 @@ def diary_add():
         content = request.values.get("content")
         score = request.values.get("score")
         try:
-            cursor.execute("call addDiary(\""+str(username)+"\",\""+str(content)+"\", score)")
+            # cursor.execute("call addDiary(\""+str(username)+"\",\""+str(content)+"\", score)")
+            cursor.execute(f'call addDiary("{str(username)}", "{str(content)}", "{str(score)}")')
             db.commit()
             print("add diary success")
             return "1"
@@ -73,11 +75,12 @@ def diary_show():
     if request.method == "GET":
         username = request.values.get("username")
         content = request.values.get("content")
-        cursor.execute("SELECT * FROM Diary WHERE username = \""+str(username)+"\"")
+        # cursor.execute("SELECT * FROM Diary WHERE username = \""+str(username)+"\"")
+        cursor.execute(f'SELECT * FROM Diary WHERE username = "{str(username)}"')
         data = cursor.fetchall()
         temp = {}
         result = []
-        if (data != None):
+        if (data is not None):
             for i in data:
                 temp["username"] = i[0]
                 temp["content"] = i[1]
