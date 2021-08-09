@@ -1,22 +1,3 @@
-
-
-// button
-const btn = document.querySelector('.btn');
-btn.addEventListener('click', (e) => {
-    document.querySelector('.btn').style.background = ('grey');
-});
-
-btn.addEventListener('mouseover', (e) => {
-    e.preventDefault();  // Prevent the form from being submitted
-    document.querySelector('.btn').style.background = ('purple');
-});
-
-btn.addEventListener('mouseout', (e) => {
-    e.preventDefault();  // Prevent the form from being submitted
-    document.querySelector('.btn').style.background = ('black');
-});
-
-
 const getScoreButton = document.getElementById("diary-getScore");
 const submitButton = document.getElementById("diary-submit");
 const content = document.getElementById("content");

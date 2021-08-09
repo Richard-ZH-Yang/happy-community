@@ -7,7 +7,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    background: url("figs/background.JPG");
+    background: url("../images/background.JPG");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

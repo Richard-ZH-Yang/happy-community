@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Happy Community - Login</title>
-    <link rel="shortcut icon" href="./figs/smiley_face.png"/>
-    <link rel="stylesheet" href="style.css">
+    <title>Happy Community - Signup</title>
+    <link rel="shortcut icon" href="../images/smiley_face.png"/>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <header>
@@ -15,8 +15,8 @@
 
 <section class="container">
     <form id="my-form">
-        <h1>Log in</h1>
-    
+        <h1>Sign up</h1>
+
         <div class="msg"></div>
         <div>
             <label for="username">Username</label>
@@ -26,17 +26,19 @@
             <label for="password">Password</label>
             <input type="password" name="password" id="password">
         </div>
+        <div>
+            <label for="confirm">Confirm password</label>
+            <input type="password" name="confirm" id="confirm">
+        </div>
 
 
-        <input class="btn" type="submit" id="login-submit" value="Log in" onclick="getUser()">
+        <input class="btn" type="submit" id="signup-submit" value="Sign up">
         <input class = "btn" type="button" value="Go back" onclick="history.back(-1)" />
 
     </form>
-
-    <ul id="users"></ul>
 </section>
 
 
-<script src="login.js"></script>
+<script src="../js/signup.js"></script>
 </body>
 </html>
