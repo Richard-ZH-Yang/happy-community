@@ -22,10 +22,10 @@ function onSubmit(e) {
     } else {
         // var test = document.getElementById('username').value;
         // console.log(username);
-
+        var username = document.getElementById('username').value;
         var a = addUser();
         console.log(a);
-        location.href = 'diary.html';
+        location.href = `diary.html?username=${username}`;
 
     }
 }
