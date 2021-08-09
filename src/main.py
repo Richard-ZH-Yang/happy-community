@@ -117,10 +117,10 @@ def decode_integers(integers):
 
 def predict(text):
     encoded_text = encode_text(text)
-    pred = np.zeros((1, 250))
+    pred = np.zeros((1, MAXLEN))
     pred[0] = encoded_text
-    result = model.predict(pred)
-    return(result[0])
+    result = model.predict(pred).item()
+    return result
 
 
 @app.route('/login/diary/score', methods=['GET'])
@@ -128,12 +128,11 @@ def diary_score():
     if request.method == "GET":
         content = request.values.get("content")
         result = predict(content)
-        score = round(result[0] * 100)
-        score = str(score)
-        print(score)
+        score = round(result * 100)
+        print(f'{score=}')
         # jsondata = {"score":str(result[0])}
         # return jsonify(jsondata)
-        return score
+        return str(score)
 
 
 if __name__ == "__main__":
