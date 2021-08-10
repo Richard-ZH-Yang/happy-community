@@ -11,6 +11,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
     width: 100vw;
     height: 100vh;
 }
@@ -48,12 +49,38 @@ header {
     padding: 3rem 2rem;
 }
 
+
 .diary {
     margin: auto;
     width: 50%;
     overflow: auto;
     padding: 3rem 2rem;
 }
+
+
+#wrapper {
+    width: 100%;
+    margin: 0px auto;
+
+}
+
+
+#bigger-container {
+    margin: auto;
+    width: 70%;
+    overflow: auto;
+    padding: 3rem 2rem;
+}
+
+.each {
+    margin: auto;
+    width: 90%;
+    overflow: auto;
+    padding: 1rem 2rem;
+    border: solid 3px #555c76;
+}
+
+
 
 #my-form {
     padding: 2rem;

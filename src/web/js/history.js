@@ -32,6 +32,7 @@ function loadHistoryContent(xhttp) {
             `<h2> ${score} </h2>` +
             `<h3> ${time} </h3>` +
             `<p> ${one_content} </p>`+
+            `<input class="btn" type="button" id="history-share" value="Share to community">`+
             `</div>`;
     })
     newContent += "</div>";
