@@ -24,7 +24,7 @@ function onSubmit(e) {
 
         var usernameValue = addUser();
         console.log(usernameValue);
-        location.href = `diary.html?username=${usernameValue}`;
+        
         // location.href = `diary.html`;
 
 
@@ -37,19 +37,20 @@ function addUser() {
 
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    var newJSON = {'username': username, 'password': password};
-    addUserInJSON(newJSON);
-    return username;
-}
-
-function addUserInJSON(newUser) {
-    var username = newUser['username'];
-    var password = newUser['password'];
-
     let xhttp = new XMLHttpRequest();
     xhttp.open("GET", `http://localhost:8080/login/add?username=${username}&password=${password}`, true);
-    xhttp.setRequestHeader("Content-Type", "application/json");
-    xhttp.send(JSON.stringify(newUser));
-    document.getElementById("my-form").innerHTML = `<h1>New User Added!</h1>`;
+    xhttp.onload = function() {
+        if (this.status == 200) {
+            const result = this.responseText;
+            if (result == '1') {
+                location.href = `diary.html?username=${username}`;
+            } else {
+                msg.classList.add('error');
+                msg.innerHTML = 'Username already exists!';
+            }
 
+        }
+    }
+
+    xhttp.send();
 }
