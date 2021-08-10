@@ -1,3 +1,5 @@
+
+
 const signupButton = document.getElementById("signup-submit");
 const goBackButton = document.getElementById("go-to-index");
 const username = document.getElementById('username');
@@ -7,8 +9,10 @@ const msg = document.querySelector('.msg');
 
 // submit
 signupButton.addEventListener('click', onSubmit);
+
 function onSubmit(e) {
     e.preventDefault();
+
 
     if (username.value === '' || password.value === '' || passwordConfirm.value === '') {
         msg.classList.add('error');
@@ -16,25 +20,24 @@ function onSubmit(e) {
     } else if (password.value != passwordConfirm.value) {
         msg.classList.add('error');
         msg.innerHTML = 'Passwords do not match';
-        // } else if (checkDuplicity(username.value)) {
-        //     msg.classList.add('error');
-        //     msg.innerHTML = 'Username already exists!';
     } else {
-        // var test = document.getElementById('username').value;
-        // console.log(username);
-        var username = document.getElementById('username').value;
-        var a = addUser();
-        console.log(a);
-        location.href = `diary.html?username=${username}`;
+
+        var usernameValue = addUser();
+        console.log(usernameValue);
+        location.href = `diary.html?username=${usernameValue}`;
+        // location.href = `diary.html`;
+
 
     }
+
+
 }
 
 function addUser() {
 
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    var newJSON  = {'username': username, 'password': password};
+    var newJSON = {'username': username, 'password': password};
     addUserInJSON(newJSON);
     return username;
 }
