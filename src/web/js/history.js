@@ -12,7 +12,7 @@ function loadHistory() {
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            loadHistoryContent(this);
+            loadHistoryContent(this, user);
         }
     };
     xhttp.open("GET", `http://localhost:8080/login/diary/show?username=${user}`, true);
@@ -21,7 +21,7 @@ function loadHistory() {
 }
 
 
-function loadHistoryContent(xhttp) {
+function loadHistoryContent(xhttp, username) {
     var info = JSON.parse(xhttp.responseText);
     var newContent = "<div class='historyContent'>";
     info.forEach(function (one) {
@@ -32,7 +32,7 @@ function loadHistoryContent(xhttp) {
             `<h2> ${score} </h2>` +
             `<h3> ${time} </h3>` +
             `<p> ${one_content} </p>`+
-            `<input class="btn" type="button" id="history-share" value="Share to community">`+
+            `<input class="btn" type="button" id="history-share-${username}" value="Share to community">`+
             `</div>`;
     })
     newContent += "</div>";
