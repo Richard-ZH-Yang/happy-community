@@ -1,22 +1,12 @@
-let i = 0;
-let buttons;
+
 const msg = document.querySelector('.msg');
 
 window.addEventListener('load', (event) => {
     loadHistory();
-    initializeButtons();
     console.log('The page has fully loaded');
 });
 
 
-function initializeButtons() {
-    buttons = [i + 1];
-    var j = i;
-    while (j >= 0) {
-        buttons.push(document.getElementById(`history-share-${j}`));
-        j--;
-    }
-}
 
 
 function loadHistory() {
@@ -50,7 +40,6 @@ function loadHistoryContent(xhttp) {
         var content_id = one.content_id;
         newContent += `<div class = "each">` +
             `<h3> Score: ${score} </h3>` +
-            `<h5> Diary ID: ${content_id} </h5>` +
             `<h5> ${time} </h5>` +
             `<p> ${one_content} </p>`+
             //`<input class="btn" type="button" id="history-share-${id}" value="Share to community">`+

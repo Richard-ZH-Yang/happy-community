@@ -145,6 +145,31 @@ header {
 
 }
 
+
+
+
+.small_btn {
+    display: block;
+    width: 50%;
+    padding: 10px 15px;
+    border: 0;
+    background: #333;
+    color: #fff;
+    border-radius: 200px;
+    margin: 5px 0;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+}
+
+
+
+.small_btn:hover, btn:visited, btn:link, btn:active {
+    background: #444;
+    text-decoration: none;
+
+}
+
 .bg-dark {
     background: #333;
     color: #fff;
