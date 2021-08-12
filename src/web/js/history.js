@@ -45,7 +45,6 @@ function loadHistoryContent(xhttp) {
             //`<input class="btn" type="button" id="history-share-${id}" value="Share to community">`+
             `<button type="button" class="btn" onClick="shareDiary('${user}','${content_id}')">Share to community</button>` + 
             `</div>`;
-        i++;
     })
     newContent += "</div>";
     document.getElementById("my-form").innerHTML = newContent;
@@ -57,8 +56,7 @@ function shareDiary(username, content_id){
     xhttp.onload = function() {
         const score = this.responseText;
         if (score == "-1") {
-            msg.classList.add('score');
-            msg.innerHTML = `Diary ID: ${content_id} already shared`;           
+            alert("This diary already shared!")         
       
         }
         
