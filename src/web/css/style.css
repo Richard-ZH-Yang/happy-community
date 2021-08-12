@@ -21,7 +21,7 @@ textarea {
     padding: 15px;
 	font-family: Arial, Helvetica, sans-serif;
     width: 90%;
-    align: center;
+    box-align: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
