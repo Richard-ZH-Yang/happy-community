@@ -24,3 +24,12 @@ function onCommunity(e) {
     var user = params.get('username');
     location.href = `community.html?username=${user}`;
 }
+
+
+function onNewDiary(e) {
+    e.preventDefault();
+    var cur_url = window.location.href;
+    var params = (new URL(cur_url)).searchParams;
+    var user = params.get('username');
+    location.href = `diary.html?username=${user}`;
+}
