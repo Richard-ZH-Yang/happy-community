@@ -66,10 +66,10 @@ header {
 
 
 #bigger-container {
-    margin: auto;
+    margin: auto; 
     width: 70%;
     overflow: auto;
-    padding: 3rem 2rem;
+    padding: 3rem 2rem; 
 }
 
 .each {
@@ -210,7 +210,7 @@ nav ul{
 
 nav ul li {
     float: left;
-    width: 33%;
+    width: 25%;
     height: 40px;
     line-height: 30px;
     text-align: center;
