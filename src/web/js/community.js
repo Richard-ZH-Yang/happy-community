@@ -2,6 +2,9 @@ let curr_num_likes = 0;
 var cur_url = window.location.href;
 var params = (new URL(cur_url)).searchParams;
 var user = params.get('username');
+var hasUnfolded = {};
+
+
 
 window.addEventListener('load', (event) => {
     loadCommunity();
@@ -37,6 +40,7 @@ function loadDiary(xhttp) {
         var num_likes = one.num_likes;
         var button_id = `${diary_user} + ${content_id}`;
         var comment_id = button_id + ' cId';
+        hasUnfolded[comment_id] = false;
         newContent += `<div class = "each">` +
             `<h3> Score: ${score} </h3>` +
             `<h5> From: ${diary_user} </h5>` +
@@ -92,14 +96,22 @@ function addComment(diary_user,content_id,comment_id,add_cId){
 
 
 function loadComment(diary_user,content_id,comment_id) {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            getComment(this,diary_user, content_id,comment_id);
-        }
-    };
-    xhttp.open("GET", `http://localhost:8080/login/community/comment/show?diary_user=${diary_user}&diary_id=${content_id}`, true);
-    xhttp.send();
+    if (hasUnfolded[comment_id]) {
+        document.getElementById(`${comment_id}`).innerHTML = null;
+        replaceButtonText(comment_id.substring(0, comment_id.length - 3), 'fold the comment');
+    } else {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                getComment(this,diary_user, content_id,comment_id);
+            }
+        };
+        xhttp.open("GET", `http://localhost:8080/login/community/comment/show?diary_user=${diary_user}&diary_id=${content_id}`, true);
+        xhttp.send();
+    }
+
+    hasUnfolded[comment_id] = !hasUnfolded[comment_id];
+    
 
 }
 
